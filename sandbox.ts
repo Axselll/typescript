@@ -1,14 +1,33 @@
-// type basics
+// Arrays//
+let names = ["luigi", "mario"];
 
-let character = "luigi";
-let age = 10;
-let isDumb = true;
+names.push("naruto");
+// names.push(1); (can't do it names type is string and can't change the type ex. array to string)
+// names = 'mario';
+// names[0] = true;
 
-// can't do it because it look the variable type
-// character = 3
+let mixed = [10, "ten", true];
 
-// define param type can do it everywhere
-const circ = (diameter: number) => {
-	return diameter + Math.PI;
+mixed.push(10, "lol");
+mixed[0] = 20;
+//can do it because type in array is mixed
+
+// Objects//
+let ninja = {
+	name: "mario",
+	isDumb: true,
+	age: 10,
 };
-console.log(circ(5));
+
+ninja.age = 20;
+ninja.name = "ryu";
+// ninja.name = 20 (can't do it)
+// ninja.skills = 'run' (just don't do it there is no skills property in ninja object)
+
+// override ninja object
+ninja = {
+	name: "yotam",
+	isDumb: false,
+	age: 5,
+	// skills: ['run', 'sleep'] (just don't do it there is no skills property in ninja object)
+};
