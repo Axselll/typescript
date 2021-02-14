@@ -1,26 +1,33 @@
-// Arrays//
-var names = ["luigi", "mario"];
-names.push("naruto");
-// names.push(1); (can't do it names type is string and can't change the type ex. array to string)
-// names = 'mario';
-// names[0] = true;
-var mixed = [10, "ten", true];
-mixed.push(10, "lol");
-mixed[0] = 20;
-//can do it because type in array is mixed
-// Objects//
-var ninja = {
+// explicit types
+var char;
+var age;
+var isDumb;
+// age = "lala"; (don't even try do that lmao)
+age = 12;
+// arrays
+// array of string and initialize it as an empty array
+var ninjas = [];
+ninjas.push("mario");
+// union types
+// let user to define more than 1 type below only can store string and number
+var mixed = [];
+mixed.push("luigi", 10);
+// don't need a parentheses if declare union type on a normal variable
+var uid;
+uid = 123;
+uid = "lala";
+// objects
+var ninjaOne;
+ninjaOne = {
     name: "mario",
-    isDumb: true,
-    age: 10
+    age: 12
 };
-ninja.age = 20;
-ninja.name = "ryu";
-// ninja.name = 20 (can't do it)
-// ninja.skills = 'run' (just don't do it there is no skills property in ninja object)
-// override ninja object
-ninja = {
-    name: "yotam",
-    isDumb: false,
-    age: 5
+// can do this because an array is a some kinda an object
+ninjaOne = [];
+// more specific
+var ninjaTwo;
+ninjaTwo = {
+    name: "mario",
+    age: 10,
+    isDumb: false
 };
