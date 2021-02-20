@@ -1,11 +1,25 @@
-// type aliases
-type StringOrNum = string | number;
-type objWithName = { name: string; uid: StringOrNum };
+// Function signature
 
-const logDetails = (uid: StringOrNum, item: string) => {
-	console.log(`${item} has a uid of ${uid}`);
+// let greet = Function;
+
+// ex.1
+let greet: (a: string, b: string) => void;
+greet = (name: string, greeting: string) => {
+	console.log(`${name} says ${greeting}`);
 };
 
-const greet = (user: objWithName) => {
-	console.log(`${user.name} say hello`);
+// ex.2
+let calc: (a: number, b: number, c: string) => number;
+calc = (n1: number, n2: number, act: string) => {
+	if (act === "add") {
+		return n1 + n2;
+	} else {
+		return n1 - n2;
+	}
+};
+
+// ex.3
+let logDetails: (obj: { name: string; age: number }) => void;
+logDetails = (ninja: { name: string; age: number }) => {
+	console.log(`${ninja.name} is ${ninja.age} years old`);
 };
