@@ -1,22 +1,23 @@
-// DOM & Type Casting
+//  Classes
+class Invoice {
+	client: string;
+	details: string;
+	amount: number;
 
-// put (! on query selector) ex. querySelector("a")!  so you dont need to use ? like ex below
-// if you use ? it mean a can be null or not exist in HTMLElement
-const anchor = document.querySelector("a");
-// console.log(anchor?.href);
+	constructor(c: string, d: string, a: number) {
+		this.client = c;
+		this.details = d;
+		this.amount = a;
+	}
 
-// const form = document.querySelector("form")!;
-// if using 'as' take off (!) mark because it's never gonna be null
-const form = document.querySelector(".new-item-form") as HTMLFormElement;
-// console.log(form.children);
+	format() {
+		return `${this.client} owes £ ${this.amount} for ${this.details}`;
+	}
+}
 
-// inputs
-const type = document.querySelector("#type") as HTMLSelectElement;
-const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
-const details = document.querySelector("#details") as HTMLInputElement;
-const amount = document.querySelector("#amount") as HTMLInputElement;
+const invOne = new Invoice("mario", "work for the website", 100);
+const invTwo = new Invoice("luigi", "work for the website", 200);
 
-form.addEventListener("submit", (e: Event) => {
-	e.preventDefault();
-	console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+let invoices: Invoice[] = [];
+invoices.push(invOne, invTwo);
+console.log(invoices);

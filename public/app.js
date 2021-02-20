@@ -1,13 +1,22 @@
 "use strict";
-// DOM & Type Casting
-// put (! on query selector) ex. querySelector("a")!  so you dont need to use ? like ex below
-// if you use ? it mean a can be null or not exist in HTMLElement
-var anchor = document.querySelector("a");
-// console.log(anchor?.href);
-// const form = document.querySelector("form")!;
-// if using 'as' take off (!) mark because it's never gonna be null
+//  Classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes \u00A3 " + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice("mario", "work for the website", 100);
+var invTwo = new Invoice("luigi", "work for the website", 200);
+var invoices = [];
+invoices.push(invOne, invTwo);
+console.log(invoices);
 var form = document.querySelector(".new-item-form");
-// console.log(form.children);
 // inputs
 var type = document.querySelector("#type");
 var tofrom = document.querySelector("#tofrom");
