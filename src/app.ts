@@ -20,6 +20,12 @@ const me: isPerson = {
 
 console.log(me);
 
+const greetPeron = (person: isPerson) => {
+	console.log(`hello ${person.name}`);
+};
+// strict usage, same structure with the interface is a must
+greetPeron(me);
+
 import { Invoice } from "./classes/Invoice.js";
 
 const invOne = new Invoice("mario", "work for the website", 100);
